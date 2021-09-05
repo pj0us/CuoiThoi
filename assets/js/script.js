@@ -27,7 +27,7 @@ btn.addEventListener('click', showForm);
 btn.addEventListener('click', function() {
     var audio = document.getElementById("music");
     audio.play();
-    audio.volume = 0.1
+    audio.volume = 0.5
 })
 
 
