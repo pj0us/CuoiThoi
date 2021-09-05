@@ -4,8 +4,8 @@ const modalContainer = document.querySelector ('.js-modal-container')
 
 function move(elm) {
     elm.style.possiton = 'absolute'
-    elm.style.top = Math.floor(Math.random() * 20 + 10) + '%'
-    elm.style.right = Math.floor(Math.random()* 20 + 10 ) + '%'
+    elm.style.top = Math.floor(Math.random() * 80) + '%'
+    elm.style.right = Math.floor(Math.random()* 80) + '%'
 }
 
 function showForm() {
@@ -27,21 +27,17 @@ btn.addEventListener('click', showForm);
 btn.addEventListener('click', function() {
     var audio = document.getElementById("music");
     audio.play();
+    audio.volume = 0.1
 })
 
 
 modalClose.addEventListener('click', closeForm);
 modalClose.addEventListener('click', function() {
     var audio = document.getElementById("music");
-    audio.muted();
+    audio.pause();
 })
 modal.addEventListener('click', closeForm);
 modal.addEventListener('click', function() {
     var audio = document.getElementById("music");
-    audio.muted();
-})
-modalContainer.addEventListener('click', function(event) {
-    event.stopPropagation();
-    var audio = document.getElementById("music");
-    audio.muted();
+    audio.pause();
 })
