@@ -24,20 +24,23 @@ btn.addEventListener('mouseover', function(e) {
 var btn = document.querySelector('#yes');
 btn.addEventListener('click', showForm);
 
+const music = ['music','music2','music3']
+let random = music[Math.floor(Math.random()*music.length)]
+
 btn.addEventListener('click', function() {
-    var audio = document.getElementById("music");
-    audio.play();
+    random = music[Math.floor(Math.random()*music.length)]
+    var audio = document.getElementById(random);
+    audio.play(true);
     audio.volume = 0.5
 })
 
-
 modalClose.addEventListener('click', closeForm);
 modalClose.addEventListener('click', function() {
-    var audio = document.getElementById("music");
+    var audio = document.getElementById(random);
     audio.load();
 })
 modal.addEventListener('click', closeForm);
 modal.addEventListener('click', function() {
-    var audio = document.getElementById("music");
+    var audio = document.getElementById(random);
     audio.load();
 })
